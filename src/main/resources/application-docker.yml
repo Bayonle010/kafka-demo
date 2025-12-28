@@ -3,9 +3,10 @@ server:
 
 spring:
   kafka:
+    bootstrap-servers: kafka:9092
+    # Don’t fail app startup if Kafka is still starting up
     admin:
       fail-fast: false
-    bootstrap-servers: kafka:9092
 
     consumer:
       group-id: myGroup
@@ -16,6 +17,3 @@ spring:
     producer:
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
       value-serializer: org.apache.kafka.common.serialization.StringSerializer
-
-
-
